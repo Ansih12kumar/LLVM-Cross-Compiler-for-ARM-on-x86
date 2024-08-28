@@ -30,12 +30,6 @@ sudo apt-get update
 sudo apt-get install qemu qemu-user qemu-user-static
 `````
 QEMU is an open-source emulator and virtualizer. qemu-user and qemu-user-static provide user-mode emulation for running programs compiled for different architectures (e.g., ARM).
-### Compiling and Running ARM Code:
-```
-clang --target=arm-linux-gnueabi -o hello_arm hello.c
-qemu-arm hello_arm
-`````
-clang --target=arm-linux-gnueabi compiles hello.c for the ARM architecture. qemu-arm runs the ARM binary on your x86_64 machine using QEMU.
 ### hello.c Explanation
 The hello.c file is a simple C program:
 ```
@@ -46,3 +40,10 @@ int main() {
     return 0;
 }
 `````
+### Compiling and Running ARM Code:
+```
+clang --target=arm-linux-gnueabi -o hello_arm hello.c
+qemu-arm hello_arm
+`````
+clang --target=arm-linux-gnueabi compiles hello.c for the ARM architecture. qemu-arm runs the ARM binary on your x86_64 machine using QEMU.
+
